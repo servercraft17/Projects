@@ -1,0 +1,15 @@
+# Linux
+.o
+.a
+.so
+
+# Windows
+.exe
+.dll
+.lib
+.obj
+
+# Directories
+build/
+bin/
+obj/

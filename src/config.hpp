@@ -3,8 +3,8 @@
 
 #include <string>
 
-namespace Config {
-    std::string projects_dir;
+namespace PRJConfig {
+    inline std::string projects_dir;
 
     void LoadDefaultValues();
     void SaveDefaultValues();

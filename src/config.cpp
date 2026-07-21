@@ -4,21 +4,23 @@
 #include <iostream>
 #include <fstream>
 
-void Config::LoadDefaultValues() {
-    std::string documents = PRJ_GetDocumentsPath();
+
+
+void PRJConfig::LoadDefaultValues() {
+    std::string documents = PRJGetDocumentsPath();
     if (documents.empty()) {
-        documents = PRJ_GetFSRoot();
+        documents = PRJGetFSRoot();
     }
     projects_dir = documents + "Projects\\";
 }
 
-void Config::SaveDefaultValues() { //! UNFINISHED
-    std::string datapath = PRJ_GetDataPath();
+void PRJConfig::SaveDefaultValues() { //! UNFINISHED
+    std::string datapath = PRJGetDataPath();
     if (datapath.empty()) {
-        printf("ERROR! Failed to load config values!");
+        printf("ERROR! Failed to load config values!\n");
         return;
     }
-    if (!PRJ_DoesFileExist(datapath+"config.json")) {
+    if (!PRJDoesFileExist(datapath+"config.json")) {
         remove((datapath+"config.json").c_str());
         return;
     }
@@ -26,13 +28,13 @@ void Config::SaveDefaultValues() { //! UNFINISHED
     std::ofstream configFile(datapath+"config.json");
 }
 
-void Config::LoadConfigValues() { //! UNFINISHED
-    std::string datapath = PRJ_GetDataPath();
+void PRJConfig::LoadConfigValues() { //! UNFINISHED
+    std::string datapath = PRJGetDataPath();
     if (datapath.empty()) {
-        printf("ERROR! Failed to load config values!");
+        printf("ERROR! Failed to load config values!\n");
         return;
     }
-    if (!PRJ_DoesFileExist(datapath+"config.json")) {
+    if (!PRJDoesFileExist(datapath+"config.json")) {
         SaveDefaultValues();
         return;
     }

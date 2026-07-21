@@ -1,6 +1,6 @@
 compiler := g++
 
-exec := out.exe
+exec := project.exe
 bin := ./bin
 
 src_dir = ./src
